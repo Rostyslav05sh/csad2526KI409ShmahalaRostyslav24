@@ -1,17 +1,17 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Створення каталогу білдування
+REM Creating a build directory
 if not exist build (
     mkdir build
 )
 cd build
 
-REM Конфігурування проекту за допомогою CMake
+REM Configuring a project using CMake
 cmake ..
 
-REM Білдування проєкту
+REM Project building
 cmake --build .
 
-REM Запуск тестів через CTest
+REM Running tests via CTest
 ctest --output-on-failure
