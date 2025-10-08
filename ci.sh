@@ -1,9 +1,15 @@
 #!/bin/bash
+set -e
 
-# CI script for local build and test
+# Create build directory
+mkdir -p build
+cd build
 
-# Add your build commands here
+# Configure the project with CMake
+cmake ..
 
-# Example: echo "Building..."
+# Build the project
+cmake --build .
 
-# Example: echo "Testing..."
+# Run tests using CTest
+ctest --output-on-failure
